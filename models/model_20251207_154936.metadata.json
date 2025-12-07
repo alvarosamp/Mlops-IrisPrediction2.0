@@ -1,0 +1,13 @@
+{
+    "model_path": "C:\\Users\\vish8\\OneDrive\\Documentos\\Mlops-IrisPrediction2.0\\models\\model_20251207_154936.pkl",
+    "model_hash": "3f6a91404203c4b993c7c40778009055",
+    "created_at": "2025-12-07T15:49:36.830756",
+    "metrics": {
+        "accuracy": 1.0
+    },
+    "params": {
+        "n_estimators": 100,
+        "max_depth": 10,
+        "random_state": 42
+    }
+}
