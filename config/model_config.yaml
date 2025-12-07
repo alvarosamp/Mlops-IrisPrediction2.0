@@ -1,0 +1,17 @@
+model:
+  n_estimators: 100
+  max_depth: 10
+  learning_rate: 0.01
+  random_state: 42
+
+data:
+  test_size: 0.2
+  random_state: 42
+
+mlflow:
+  experiment_name: "Iris_Classification-Mlops"
+  tracking_uri: "http://localhost:5000"
+
+versioning:
+  auto_dvc: true
+  model_name: "Iris_Classifier"
