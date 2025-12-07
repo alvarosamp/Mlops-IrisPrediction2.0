@@ -4,7 +4,12 @@ import yaml
 import hashlib
 from datetime import datetime
 from pathlib import Path
-import mlflow
+try:
+    import mlflow  # type: ignore
+    HAS_MLFLOW = True
+except Exception:
+    mlflow = None  # type: ignore
+    HAS_MLFLOW = False
 import subprocess
 
 
@@ -56,10 +61,16 @@ def dvc_track(model_path):
 
 
 def setup_mlflow(tracking_uri, experiment_name):
+    if not HAS_MLFLOW:
+        print("ℹ️ MLflow não instalado; prosseguindo sem tracking.")
+        return
     try:
-        mlflow.set_tracking_uri(tracking_uri)
+        # Permite sobrepor via variável de ambiente (útil em Docker)
+        env_uri = os.getenv("MLFLOW_TRACKING_URI")
+        effective_uri = env_uri if env_uri else tracking_uri
+        mlflow.set_tracking_uri(effective_uri)
         mlflow.set_experiment(experiment_name)
-        print(f"📡 MLflow configurado: {tracking_uri} → {experiment_name}")
+        print(f"📡 MLflow configurado: {effective_uri} → {experiment_name}")
     except Exception as e:
         # Fallback to local file store if server unavailable
         local_store = Path(__file__).resolve().parent.parent / "mlruns"

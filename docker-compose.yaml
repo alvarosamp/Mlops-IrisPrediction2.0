@@ -1,0 +1,52 @@
+services:
+  mlflow:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.mlflow
+    container_name: mlops-mlflow
+    ports:
+      - "${MLFLOW_PORT:-5003}:5000"
+    volumes:
+      - ./mlruns:/mlflow/backend
+      - ./mlflow_artifacts:/mlflow/artifacts
+    networks:
+      - mlops-network
+    restart: unless-stopped
+
+  train:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.train
+    container_name: mlops-train
+    volumes:
+      - ./models:/app/models
+      - ./data:/app/data
+      - ./mlruns:/app/mlruns
+      - ./config:/app/config
+    environment:
+      - MLFLOW_TRACKING_URI=http://mlflow:5000
+    networks:
+      - mlops-network
+    depends_on:
+      - mlflow
+    restart: "no"
+
+  api:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.api
+    container_name: mlops-api
+    ports:
+      - "${API_PORT:-5001}:5001"
+    volumes:
+      - ./models:/app/models:ro
+      - ./templates:/app/templates:ro
+    networks:
+      - mlops-network
+    depends_on:
+      - mlflow
+    restart: unless-stopped
+
+networks:
+  mlops-network:
+    driver: bridge

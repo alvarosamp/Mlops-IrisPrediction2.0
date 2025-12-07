@@ -1,0 +1,15 @@
+artifact_uri: file://C:\Users\vish8\OneDrive\Documentos\Mlops-IrisPrediction2.0\mlruns/133638696070973477/154f2f8483e44e39b1d135485e2283c0/artifacts
+end_time: 1765138585063
+entry_point_name: ''
+experiment_id: '133638696070973477'
+lifecycle_stage: active
+run_id: 154f2f8483e44e39b1d135485e2283c0
+run_name: thundering-midge-302
+run_uuid: 154f2f8483e44e39b1d135485e2283c0
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1765138584118
+status: 3
+tags: []
+user_id: root

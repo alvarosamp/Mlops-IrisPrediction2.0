@@ -1,0 +1,15 @@
+artifact_uri: file://C:\Users\vish8\OneDrive\Documentos\Mlops-IrisPrediction2.0\mlruns/133638696070973477/843d412e31824bf6b8dbf7bd69e47f77/artifacts
+end_time: 1765139394646
+entry_point_name: ''
+experiment_id: '133638696070973477'
+lifecycle_stage: active
+run_id: 843d412e31824bf6b8dbf7bd69e47f77
+run_name: puzzled-foal-412
+run_uuid: 843d412e31824bf6b8dbf7bd69e47f77
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1765139393667
+status: 3
+tags: []
+user_id: root

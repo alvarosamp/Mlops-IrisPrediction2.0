@@ -1,0 +1,15 @@
+artifact_uri: file://C:\Users\vish8\OneDrive\Documentos\Mlops-IrisPrediction2.0\mlruns/133638696070973477/4e51ddde0de8483a93b125e9b4f186bc/artifacts
+end_time: 1765139249224
+entry_point_name: ''
+experiment_id: '133638696070973477'
+lifecycle_stage: active
+run_id: 4e51ddde0de8483a93b125e9b4f186bc
+run_name: thoughtful-kite-122
+run_uuid: 4e51ddde0de8483a93b125e9b4f186bc
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1765139247939
+status: 3
+tags: []
+user_id: root

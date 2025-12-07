@@ -1,0 +1,15 @@
+artifact_uri: file://C:\Users\vish8\OneDrive\Documentos\Mlops-IrisPrediction2.0\mlruns/133638696070973477/98d4a95f2b374aa08d64a278ae2c5c4c/artifacts
+end_time: 1765138335882
+entry_point_name: ''
+experiment_id: '133638696070973477'
+lifecycle_stage: active
+run_id: 98d4a95f2b374aa08d64a278ae2c5c4c
+run_name: merciful-rook-351
+run_uuid: 98d4a95f2b374aa08d64a278ae2c5c4c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1765138332305
+status: 3
+tags: []
+user_id: root

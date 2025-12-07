@@ -1,0 +1,6 @@
+FROM python:3.10-slim
+WORKDIR /mlflow
+RUN pip install --no-cache-dir mlflow==2.9.2 boto3==1.34.0
+RUN mkdir -p /mlflow/artifacts /mlflow/backend
+EXPOSE 5000
+CMD ["mlflow", "server", "--backend-store-uri", "file:///mlflow/backend", "--default-artifact-root", "file:///mlflow/artifacts", "--host", "0.0.0.0", "--port", "5000"]
